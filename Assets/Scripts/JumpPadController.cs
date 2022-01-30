@@ -16,9 +16,11 @@ public class JumpPadController : MonoBehaviour
 
 
             cm.playerSpeed = JumpCoef / 1.9f;
+
+            cm.BoostPlaySound();
             Debug.Log("You currently have more power.");
             
-            other.GetComponent<Renderer>().material.color =gameObject.GetComponent<Renderer>().material.color;
+            other.GetComponent<Renderer>().material.color = gameObject.GetComponent<Renderer>().material.color;
 
 
             Destroy(gameObject);

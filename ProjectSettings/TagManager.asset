@@ -9,6 +9,8 @@ TagManager:
   - Laser
   - LaserBlock
   - LaserBlocker
+  - Grounded
+  - GameOver
   layers:
   - Default
   - TransparentFX

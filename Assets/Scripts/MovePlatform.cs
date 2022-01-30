@@ -19,8 +19,8 @@ public class MovePlatform : MonoBehaviour
     
     void Update () 
     {
-        print( transform.position);
-        print(waypoints[current].transform.position);
+        //print( transform.position);
+        //print(waypoints[current].transform.position);
         if(Vector3.Distance(waypoints[current].transform.position, player.transform.position) < WPradius)
         {
             current = Random.Range(0,waypoints.Length);

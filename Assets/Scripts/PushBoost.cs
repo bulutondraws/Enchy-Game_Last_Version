@@ -21,7 +21,7 @@ public class PushBoost : MonoBehaviour
             
             Debug.Log("You currently have pushing power.");
             
-            other.GetComponent<Renderer>().material.color = gameObject.GetComponent<Renderer>().material.color;
+            other.transform.GetChild(0).GetComponent<Renderer>().material.color = gameObject.GetComponent<Renderer>().material.color;
 
 
             Destroy(gameObject);

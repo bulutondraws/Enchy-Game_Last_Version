@@ -33,8 +33,5 @@ public class ButtonManager : MonoBehaviour
     {
         thisPanel.SetActive(false);
     }
-    public void RestartGame(string thisLevel)
-    {
-        SceneManager.LoadScene(thisLevel);
-    }
+   
 }

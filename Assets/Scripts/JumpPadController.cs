@@ -12,18 +12,16 @@ public class JumpPadController : MonoBehaviour
     {
         if (other.tag == "Enchy")
         {
-            cm.jumpHeight = JumpCoef;
+            cm.jumpSpeed = JumpCoef;
 
 
-            cm.playerSpeed = JumpCoef / 1.9f;
+            cm.moveSpeed = JumpCoef / 1.9f;
 
             cm.BoostPlaySound();
             Debug.Log("You currently have more power.");
             
-            other.GetComponent<Renderer>().material.color = gameObject.GetComponent<Renderer>().material.color;
-
-
-            Destroy(gameObject);
+            other.transform.GetChild(0).GetComponent<Renderer>().material.color = gameObject.GetComponent<Renderer>().material.color;
+            Destroy(this.gameObject);
         }
     }
 }

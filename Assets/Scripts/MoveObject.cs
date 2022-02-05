@@ -18,10 +18,7 @@ public class MoveObject : MonoBehaviour
     
     
     private void OnTriggerStay(Collider other)
-    
     {
-
-
         if (other.tag == "Enchy")
         {
             //pushforce = cm.playerSpeed;

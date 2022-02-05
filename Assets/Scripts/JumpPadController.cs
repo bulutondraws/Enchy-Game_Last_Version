@@ -15,7 +15,7 @@ public class JumpPadController : MonoBehaviour
             cm.jumpSpeed = JumpCoef;
 
 
-            cm.moveSpeed = JumpCoef / 1.9f;
+            //cm.moveSpeed = JumpCoef / 1.9f;
 
             cm.BoostPlaySound();
             Debug.Log("You currently have more power.");

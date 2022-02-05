@@ -84,6 +84,7 @@ public class charMove : MonoBehaviour
     private void CheckGrounded()
     {
         isGrounded = false;
+        
         float capsuleHeight = Mathf.Max(capsuleCollider.radius * 2f, capsuleCollider.height);
         Vector3 capsuleBottom = transform.TransformPoint(capsuleCollider.center - Vector3.up * capsuleHeight / 2f);
         float radius = transform.TransformVector(capsuleCollider.radius, 0f, 0f).magnitude;
@@ -94,7 +95,7 @@ public class charMove : MonoBehaviour
         if (Physics.Raycast(ray, out hit, radius * 5f))
         {
             float normalAngle = Vector3.Angle(hit.normal, transform.up);
-
+            
             if (normalAngle < slopeLimit)
             {
                 float maxDist = radius / Mathf.Cos(Mathf.Deg2Rad * normalAngle) - radius + .02f;
@@ -102,6 +103,7 @@ public class charMove : MonoBehaviour
                 if (hit.distance < maxDist)
                 {
                     isGrounded = true;
+                    jumpSound.Stop();
                 }
             }
         }
@@ -121,6 +123,7 @@ public class charMove : MonoBehaviour
         if (jumpInput && allowJump && isGrounded)
         {
             rigidbody.AddForce(transform.up * jumpSpeed, ForceMode.VelocityChange);
+            jumpSound.Play();
         }
     }
 
